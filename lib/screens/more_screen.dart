@@ -3,6 +3,7 @@ import 'package:share_plus/share_plus.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../data/app_info.dart';
+import '../services/rate_prompt.dart';
 import '../data/app_theme.dart';
 import '../l10n/lang.dart';
 import 'settings_screen.dart';
@@ -63,7 +64,7 @@ class MoreScreen extends StatelessWidget {
             leading: const Icon(Icons.star_rounded, color: Color(0xFFFBBF24)),
             title: Text(Lang.t('Avaliar na Play Store', 'Rate on Play Store', 'Calificar en Play Store')),
             subtitle: Text(Lang.t('Sua nota ajuda muito 💛', 'Your rating helps a lot 💛', 'Tu reseña ayuda mucho 💛')),
-            onTap: () => _open(AppInfo.playUrl),
+            onTap: () => RatePrompt.openReview(),
           ),
           ListTile(
             leading: const Icon(Icons.ios_share_rounded),
